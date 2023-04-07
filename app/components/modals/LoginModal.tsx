@@ -3,7 +3,7 @@
 import { signIn } from "next-auth/react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
@@ -51,6 +51,11 @@ const LoginModal = () => {
       }
     });
   };
+
+  const toggleLoginSignUp = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -114,9 +119,9 @@ const LoginModal = () => {
           justify-center
         "
         >
-          <div>New user?</div>
+          <div>Don't have an Account?</div>
           <div
-            onClick={loginModal.onClose}
+            onClick={toggleLoginSignUp}
             className="text-neutral-800 cursor-pointer hover:underline"
           >
             Sign up
