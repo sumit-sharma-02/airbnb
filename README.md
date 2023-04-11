@@ -45,20 +45,16 @@
 <br />
 
 ## Some Screenshots of Airbnb:
-<!-- <table>
+<table>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213743990-e22e06d0-d611-45b4-a78a-a1ac05a30971.png" alt="home" /></td>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213744200-32ff18be-0962-4919-9da8-a7bddbaaf814.png" alt="popular products" /></td>
+    <td><img src="https://user-images.githubusercontent.com/52236473/231175742-9c093b0c-6209-43d8-afa8-bc624a3e9c1c.png" alt="home" /></td>
+    <td><img src="https://user-images.githubusercontent.com/52236473/231176262-9a917bb9-a9cc-416e-8f53-2750a5ecfc58.png" alt="listing" /></td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213744648-82a2e43c-20b6-4a13-ad93-aa0b481764c0.png" alt="limited offers" /></td>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213744776-a702dcb2-c8d3-4e42-a195-b7816e55fcf3.png" alt="category Products" /></td>
+    <td><img src="https://user-images.githubusercontent.com/52236473/231177066-a6cd7c95-bf24-4fb9-a0fc-9a025e82de8c.png" alt="properties" /></td>
+    <td><img src="https://user-images.githubusercontent.com/52236473/231177497-2b262e92-23f1-4406-a043-0c68759bb4d7.png" alt="home" /></td>
   </tr>
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213745588-deaf8902-705d-4b2a-b262-693a181b282e.png" alt="products category" /></td>
-    <td><img src="https://user-images.githubusercontent.com/52236473/213745842-02b64422-c72c-470e-95d2-416dc40c9163.png" alt="product" /></td>
-  </tr>
-</table> -->
+</table>
 <br/>
 
 ## Quick Start
@@ -71,16 +67,22 @@ $ npm install
 
 ### Env Variables
 
-Add your config variables values in the .env file in the root directory.
+Add your config variables values in the .env file which will be in the root directory.
 
 ```js
-DATABASE_URL=
-NEXTAUTH_SECRET=
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_ID=
-GITHUB_SECRET=
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+DATABASE_URL = Go to mongodb atlas website -> login -> create database -> free -> add you username, pass -> finish -> connect -> connect with VS Code -> Copy the link paste here in the .env file -> replace <password> with the password you added while creating
+
+NEXTAUTH_SECRET = 'NEXTAUTH_SECRET'
+
+GOOGLE_CLIENT_ID = go to "https://console.cloud.google.com/getting-started" -> create a new project -> once project is created search api in searchbar -> go to Enabled APIs and services -> OAuth consent screen -> external -> create -> fill mandatory fields with you name and emailid -> continue X3. Now go to credentials on the left -> create credentials -> create OAuth Client ID -> application type - web application -> Add "http://localhost:3000/api/auth/callback/google" in the Authorized redirect URIs -> create -> Copy ClientID and paste it here in the .env file.
+
+GOOGLE_CLIENT_SECRET = Copy Client Secret and paste it here in the .env file.
+
+GITHUB_ID = Go to your github -> settings -> developer settings -> OAuth Apps -> Add new -> Add "http://localhost:3000" in homepage and authorization callback url -> generate -> copy paste client id here in .env file.
+
+GITHUB_SECRET = Continuing above step below client id click on generate client secret and paste in here in the .env file.
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = Go to Cloudinary website -> Login -> Dashboard -> copy the cloud name and paste it here in the .env file.
 ```
 
 ### Setup Prisma
