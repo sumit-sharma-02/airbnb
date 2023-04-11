@@ -21,7 +21,7 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
   const router = useRouter();
   const [deletingId, setDeletingId] = useState("");
 
-  const onCancel = useCallback(
+  const onDelete = useCallback(
     (id: string) => {
       setDeletingId(id);
       axios
@@ -41,7 +41,7 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
   );
   return (
     <Container>
-      <Heading title="Properties" subtitle="Lists of your properties." />
+      <Heading title="Properties" subtitle="List of your properties." />
       <div
         className="
            mt-10
@@ -60,7 +60,7 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
             key={listing.id}
             data={listing}
             actionId={listing.id}
-            onAction={onCancel}
+            onAction={onDelete}
             disabled={deletingId === listing.id}
             actionLabel="Delete property"
             currentUser={currentUser}
