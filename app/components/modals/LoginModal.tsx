@@ -119,7 +119,7 @@ const LoginModal = () => {
           justify-center
         "
         >
-          <div>Don't have an Account?</div>
+          <div>Do not have an Account?</div>
           <div
             onClick={toggleLoginSignUp}
             className="text-neutral-800 cursor-pointer hover:underline"
